@@ -1,24 +1,31 @@
-from github import Github
-from datetime import datetime
+from flask import request
+
+# from github import Github
 from datetime import timedelta, date
 
-import git_token
+# pull_requests = request.get("https://api.github.com/repos/Umuzi-org/tech-department/pulls?id=1")
 
-from git_token import token
+# print(pull_request.json())
 
-g = Github(token)
+def pull_requests(owner, repo_name, start_date, end_date):
+  pull_requests = request.get("https://api.github.com/repos/Umuzi-org/tech-department/pulls?id=1")
+  return pull_requests
 
-repos = g.get_user().get_repos()
-for repo in repos:
-    print(repo.name)
+print(dir(pull_requests("Umuzi-org","tech-department",18-3-2020,18-4-2020)))
 
-# def daterange(start_date, end_date):
-#     for n in range(int((end_date - start_date).days)):
-#         yield start_date + timedelta(n)
+x = {
+  "id" : 1,
+  'created_at':2019-2-4,
+  'updated_at': 2020-4-27,
+  'pushed_at': 2020-4-21,
 
-# start_date = date(2020, 3, 1)
-# end_date = date(2020, 3, 10)
+}
 
-# for single_date in daterange(start_date, end_date):
-#     date_obj = datetime.combine(single_date, datetime.min.time())
-#     print(single_date.strftime('%Y-%m-%d:'), "pull request")
+# for key, value in x.items():
+#   if value < 2018:
+#     print(value)
+
+f_date = date(2020, 3, 18)
+l_date = date(2020, 4, 18)
+pull_requests = l_date - f_date
+print(pull_requests.days)
