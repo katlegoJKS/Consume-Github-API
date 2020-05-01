@@ -5,7 +5,7 @@ from datetime import timedelta, date
 
 def pull_requests():
       git_info = {
-        'created_at':2020-4-21,
+        'created_at':2020-1-2,
         'updated_at': 2020-4-21,
         'pushed_at': 2020-4-21
       }
