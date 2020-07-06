@@ -16,4 +16,3 @@ def pull_requests(repository_name, start_date, end_date):
       return repo_pull_requests.json()
 
 pull_requests('https://api.github.com/repos/Umuzi-org/tech-department/pulls', 2020-4-1, 2020-6-1)
-
